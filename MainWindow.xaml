@@ -1,0 +1,9 @@
+﻿<Window x:Class="SnakeSpiel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Snake" Width="800" Height="600" KeyDown="Window_KeyDown"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Frame x:Name="Frame1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

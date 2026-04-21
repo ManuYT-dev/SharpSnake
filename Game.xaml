@@ -1,0 +1,45 @@
+﻿<Page x:Class="SnakeSpiel.Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Snake" Height="600" Width="800" Background="#1A1A2E">
+    <!-- Prompt: <Bild vom Spiel> Erstelle mir die UI vom folgenden Bild-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="SCORE " Foreground="White" FontSize="24" FontFamily="Consolas"/>
+            <TextBlock x:Name="TextBlock_Score" Text="0" Foreground="White" FontSize="24" FontFamily="Consolas" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <Canvas x:Name="MainCanvas" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 20">
+            <Canvas.Background>
+                <VisualBrush x:Name="GridBrush" TileMode="Tile" Stretch="None">
+                    <VisualBrush.Visual>
+                        <Rectangle Stroke="#303050" StrokeThickness="1" Fill="#252545"/>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Canvas.Background>
+        </Canvas>
+        <Border x:Name="Overlay" 
+            Grid.Row="1" 
+            Background="#AA000000" Visibility="Collapsed" 
+            Panel.ZIndex="100">
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock x:Name="TextBlock_Status" 
+                       Text="YOU WIN!" 
+                       Foreground="#00FFCC" 
+                       FontSize="64" 
+                       FontFamily="Consolas" 
+                       FontWeight="Bold">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="#00FFCC" BlurRadius="20" ShadowDepth="0"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
